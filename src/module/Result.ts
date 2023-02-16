@@ -10,8 +10,10 @@ const writeResult = () : void =>{
   handleAddSite()
 }
 
+/*
 const reWriteResult = () :void =>{
   const result = $("#result").text()
 }
+*/
 
 export { writeResult }

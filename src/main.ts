@@ -7,9 +7,11 @@ import { handleAddSite } from './module/AdvancedOptions'
 
 //VocalToNumber("Hola", { "O": 0, "A" : 4 } )
 
+/*
 let objVtoN : any = {
   
 }
+*/
 
 addSearch()
 $("#positive_parameter").on("click", addSearch)

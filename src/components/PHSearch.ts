@@ -36,7 +36,7 @@ const placeHolderSearch = ( num:number ) => {
 }
 
 const handleOnInput  = (e : any )  => {
-  const parent = e.target.parentElement.id
+  const parent : any = $(e.target).parent().attr("id")
   if(e.target.value == ''){
     delete objText[parent][e.target.id]
   }
@@ -49,7 +49,7 @@ const handleOnInput  = (e : any )  => {
 
 const handleChecked = (e : any )  => {
   const Target : any = e.target
-  const ID : any = Target.attributes["n"].nodeValue
+  const ID : any = $(Target).attr("n")
   const NODE : HTMLElement = $(`#word-${ID}`)[0]
 
   if( Target.checked ){
@@ -61,20 +61,16 @@ const handleChecked = (e : any )  => {
 }
 
 const handleOnClick = ( e : any ) => {
-  const ID : any = e.target.attributes["n"].nodeValue
+  const ID : any = $(e.target).attr("n")
   const NODE : HTMLElement = $(`#word-${ID}`)[0]
   const totalChild :number = NODE.children.length
   
-  if( totalChild > 4 ) return null
-
-  $(newInputTXT(totalChild)).appendTo(NODE)
-
-  return null
+  if( totalChild <= 4 ) $(newInputTXT(totalChild)).appendTo(NODE)
 }
 
 const handleDelete = (e:any) => {
-  const ID : any = e.target.attributes["n"].nodeValue
-  const grandParent  = e.target.parentElement.parentElement
+  const ID : any = $(e.target).attr("n")
+  const grandParent  = $(e.target).parent().parent()
   delete objText[`word-${ID}`]
   grandParent.remove()
   writeResult()

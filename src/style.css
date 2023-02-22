@@ -14,6 +14,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body{
+  padding: 8px;
+}
+
+h1{
+  color:rgb(184, 111, 15);
+}
+
 .good_search{
   padding: 8px;
 }
@@ -41,43 +49,75 @@
   border: #213547 solid 1px;
   padding: 8px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat( 4, 1fr );
+  justify-items: center;
   gap: 20px;
 }
 
+@media ( max-width: 450px ) {
+  #word {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+ @media ( max-width: 750px ) {
+  #word {
+    grid-template-columns: repeat( 2, 1fr );
+  }
+ }
+
+
 .word-container{
-  display: grid;
-  grid-template-columns: 5fr 1fr;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  gap: 12px;
+  border: #213547 solid 2px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .word-container > div {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 12px;
   align-items: center;
-  justify-content: flex-start;
-  border: #213547 solid 2px;
-  padding: 8px;
-}
-
-#word  input{
-  height: 20px;
-}
-
-.word-button input[type="button"]{
-  display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 5px;
-  transition: .25s;
-  width: 100%;
+  
+  padding: 12px 8px;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.word-container > div input{
+  width: calc( 100% - 16px );
 }
 
 .word-button{
   display: flex;
   flex-direction: column;
-  gap: 0;
+  border-top: #213547 solid 2px;
+  padding: 8px;
+  gap: 8px;
+}
+
+.word-button p{
+  margin: 0;
+}
+
+.word-button input[type="button"]{
+  border:none;
+  border-radius: 5px;
+  transition: .25s;
+  width: 100%;
+}
+
+#word input{
+  height: 20px;
 }
 
 a {

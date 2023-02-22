@@ -27,11 +27,12 @@ const placeHolderSearch = ( num:number ) => {
       <div id="word-${num}">
 
       </div>
-      <div class="word-button">
+      <footer class="word-button">
         <input type="button" class="new_input" value="+" n ="${num}">
         <input type="button" class="delete_all_parameter" value="delete" n ="${num}">
+        <p>Mode H3ll0</p>
         <input type="checkbox" name="" class="VtoN" n ="${num}">
-      </div>
+      </footer>
     </div>`
 }
 
@@ -58,6 +59,8 @@ const handleChecked = (e : any )  => {
   else{
     delete objText[NODE.id]["VtoN"]
   }
+
+  writeResult()
 }
 
 const handleOnClick = ( e : any ) => {
